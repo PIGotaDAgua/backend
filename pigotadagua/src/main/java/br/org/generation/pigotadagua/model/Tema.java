@@ -17,11 +17,9 @@ public class Tema {
 	private Long id;
 	
 	@NotBlank
-	@Size(min=5, max=100, message= "O atributo deve ter no minimo 5 e no maximo 100 caracteres")
 	private String tema;
 	
 	@NotBlank
-	@Size(min=5, max=100, message= "O atributo deve ter no minimo 5 e no maximo 100 caracteres")
 	private String descricao;
 
 	public Long getId() {

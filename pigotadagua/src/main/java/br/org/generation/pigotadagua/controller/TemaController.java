@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import br.org.generation.pigotadagua.model.Tema;
 import br.org.generation.pigotadagua.repository.TemaRepository;
 
@@ -59,8 +60,10 @@ public class TemaController {
 	}
 
 	@PutMapping
-	public ResponseEntity<Tema> put(@RequestBody Tema tema) {
-		return ResponseEntity.ok(temaRepository.save(tema));
+	public ResponseEntity<Tema> putTema (@Valid @RequestBody Tema tema){
+		return temaRepository.findById(tema.getId())
+				.map(resposta -> ResponseEntity.ok(temaRepository.save(tema)))
+				.orElse(ResponseEntity.notFound().build());
 	}
 	
 	@DeleteMapping("/{id}")

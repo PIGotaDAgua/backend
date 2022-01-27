@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.org.generation.pigotadagua.model.Tema;
+import br.org.generation.pigotadagua.model.Postagem;
+import br.org.generation.pigotadagua.repository.PostagemRepository;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -44,21 +45,24 @@ public class PostagemController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Postagem> post(@RequestBody @Valid Postagem postagem) {
+	public ResponseEntity<Postagem> postPostagem(@RequestBody @Valid Postagem postagem) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem));
 	}
 
 	@PutMapping
-	public ResponseEntity<Tema> put(@RequestBody Postagem postagem) {
-		return ResponseEntity.ok(postagemRepository.save(postagem));
-	}
+    public ResponseEntity <Postagem> putPostagem(@Valid @RequestBody Postagem postagem){
+        return postagemRepository.findById(postagem.getId())
+                .map(resposta -> ResponseEntity.ok(postagemRepository.save(postagem)))
+                .orElse(ResponseEntity.notFound().build());
+    }
 
-	@DeleteMapping("/{id}")
-	public ResponseEntity<?> deletaPostagem(@PathVariable Long id) {
-		return postagemRepository.findById(id).map(resposta -> {
-			postagemRepository.deleteById(id);
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-		}).orElse(ResponseEntity.notFound().build());
-	}
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity <?> deletePostagem(@PathVariable Long id){
+        return postagemRepository.findById(id)
+                .map(resposta ->{
+                    postagemRepository.deleteById(id);
+                    return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
 }

@@ -55,12 +55,12 @@ public class TemaController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Tema> post(@RequestBody @Valid Tema tema) {
+	public ResponseEntity<Tema> postTema(@RequestBody @Valid Tema tema) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(temaRepository.save(tema));
 	}
 
 	@PutMapping
-	public ResponseEntity<Tema> putTema (@Valid @RequestBody Tema tema){
+	public ResponseEntity<Tema> putTema(@Valid @RequestBody Tema tema){
 		return temaRepository.findById(tema.getId())
 				.map(resposta -> ResponseEntity.ok(temaRepository.save(tema)))
 				.orElse(ResponseEntity.notFound().build());

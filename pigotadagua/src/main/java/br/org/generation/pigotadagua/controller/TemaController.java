@@ -23,13 +23,13 @@ import br.org.generation.pigotadagua.repository.TemaRepository;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("/temas")
+@RequestMapping("/tema")
 public class TemaController {
 
 	@Autowired
 	public TemaRepository temaRepository;
 
-	@GetMapping
+	@GetMapping("/all")
 	public ResponseEntity<List<Tema>> getAll() {
 		return ResponseEntity.ok(temaRepository.findAll());
 	}

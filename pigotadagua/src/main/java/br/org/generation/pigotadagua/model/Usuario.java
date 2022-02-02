@@ -9,35 +9,35 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
-@Table(name = "tb_usuario")
+@Table(name = "tb_usuarios")
 public class Usuario {
 	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message= "O atributo nome é obrigatório!")
-	@Size(min=5, max=100, message= "O atributo nome deve ter no minimo 5 e no maximo 100 caracteres")
+	@NotNull(message = "O atributo Nome é obrigatorio!")
 	private String nome;
 	
-	@NotBlank(message= "O atributo e-mail é obrigatório!")
-	@Size(min=5, max=100, message= "O atributo e-mail deve ter no minimo 5 e no maximo 100 caracteres")
-	private String email;
+	@NotNull(message = "O atributo Usuário é obrigatório!")
+	@Email(message = "O atributo Usuário deve ter um e-mail válido!")
+	private String usuario;
 	
-	@NotBlank(message= "O atributo senha é obrigatório!")
-	@Size(min=5, max=100, message= "O atributo senha deve ter no minimo 5 e no maximo 100 caracteres")
-	private String senha; 
-	
+	@NotBlank(message = "O atributo Senha é obrigatório!")
+	@Size(min = 8, message = "A senha deve  terno mínimo 8 caracteres")
+	private String senha;
 	
 	private String foto;
 	
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL )
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 
@@ -57,12 +57,12 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getSenha() {
@@ -88,8 +88,6 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
-	
 
 	
 }

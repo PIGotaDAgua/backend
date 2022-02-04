@@ -1,0 +1,520 @@
+{
+	"info": {
+		"_postman_id": "793786b7-7e8c-4f43-88cb-a2a3f7fde1f6",
+		"name": "gotaDÁgua",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Postagem",
+			"item": [
+				{
+					"name": "ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/postagem/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"postagem",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Titulo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/postagem/titulo/evitar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"postagem",
+								"titulo",
+								"evitar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/postagem",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"postagem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\":\"Pequenas Atitudes Podem Conservar A Água do Planeta Update\",\r\n    \"texto\":\"A água é muito importante para os seres vivos, por isso precisamos tomar cuidados pra que não a desperdicemos a toa, segue agora algumas dicas de como adquirir esses novos hábitos: 1-Fechar bem as torneiras, 2-Regular as válvulas de descarga e eliminar vazamentos hidrícos, 3-Não deixe o chuveiro ligado à toa, 4-Escove os dentes com a torneira fechada, 5-Use o balde e não magueiras para lavar o carro e as calçadas, 6-A água que sai da máquina no final da lavagem das roupas pode ser usada para limpar calçadas, 7-A água que sai da máquina no final da lavagem das roupas pode ser usada para limpar calçadas, 8-Não jogue lixo no rio e 9-Divulgue e participe das campanhas educativas\" ,\r\n    \"tema\":{\r\n        \"id\": 1\r\n    },\r\n    \"usuario\":{\r\n        \"id\": 1\r\n    }      \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/postagem",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"postagem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"id\": 9,\r\n    \"titulo\": \"Jogue Lixo no Lugar Certo Update\",\r\n    \"texto\": \"Evitando de jogar sujeiras nos rios ,evita se as doenças e cuida do meio ambiente e evita que as nascentes morram\",\r\n    \"imagem\": \" \",\r\n    \"tema\": {\r\n        \"id\": 1\r\n        },\r\n        \"usuario\":{\r\n            \"id\": 1\r\n            }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/postagem",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"postagem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/postagem/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"postagem",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tema",
+			"item": [
+				{
+					"name": "ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tema/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tema",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Descricao",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/tema/descricao/agua",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tema",
+								"descricao",
+								"agua"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/tema/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tema",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tema\": \"Tratamento Água55\",\r\n    \"descricao\":\"não suje a agua\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tema",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tema"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"id\": 4,\r\n     \"tema\": \"Tratamento Água\",\r\n    \"descricao\": \"Trate a água com cloro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tema",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tema"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/tema/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tema",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Todos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/usuario/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/usuario/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Administrador\",\r\n    \"usuario\": \"admin@email.com.br\",\r\n    \"senha\": \"admin123\",\r\n    \"foto\": \"\",\r\n    \"dataNascimento\": \"2000-07-05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/usuario/cadastrar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW5AZW1haWwuY29tLmJyOmFkbWluMTIz",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n     \"id\": 2,\r\n    \"nome\": \"Administrador2\",\r\n    \"usuario\": \"admin2@gmail.com.br\",\r\n    \"senha\": \"admin12345\",\r\n    \"foto\": \"\",\r\n    \"dataNascimento\": \"2000-06-07\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/usuario/atualizar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"atualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"admin@email.com.br\",\r\n    \"senha\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/usuario/logar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"logar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

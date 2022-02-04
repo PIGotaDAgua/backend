@@ -1,7 +1,6 @@
 package br.org.generation.pigotadagua.configuration;
 
 import org.springdoc.core.customizers.OpenApiCustomiser;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -60,4 +59,5 @@ public class SwaggerConfig {
 		return new ApiResponse().description(message);
 
 	}
+
 }
